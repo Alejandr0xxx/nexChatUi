@@ -1,0 +1,78 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(156, 220, 240);
+}
+
+.mainSectionContainer {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.formContainer{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(239, 239, 239);
+    border-radius: 0rem 0rem 0rem 8rem;
+    padding: 2rem;
+    box-shadow: -0.9rem 1rem 0.1rem rgb(138, 138, 138),
+    1rem 1rem 0.1rem gray;
+}
+
+.imgContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+    color: rgb(82, 74, 74);
+}
+
+.span{
+    width: fit-content;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(217, 221, 224);
+    border: 1px solid rgb(193, 193, 193);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.input{
+    border: none;
+    border-radius: 0.2rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+.button{
+    background-color: rgb(169, 204, 224);
+    border: 1px solid rgb(117, 159, 168);
+    color: rgb(99, 127, 142);
+    border-radius: 1rem;
+    width: 5rem;
+    align-self: center;
+    cursor: pointer;
+}
+
+.a{
+    align-self: center;
+    font-size: 0.78rem;
+    text-decoration: none;
+    color: rgb(138, 138, 138);
+    margin-top: 0.6rem;
+}
+
+
+.img{
+    width: 100px;
+}
+
+.footer {
+    margin-top: auto; 
+}
