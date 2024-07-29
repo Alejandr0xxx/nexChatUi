@@ -1,7 +1,8 @@
 import styles from '../stylesheets/login_page.module.css';
 import logo from '../../../assets/img/public_img/logo.png';
-import { ChangeEvent, FormEvent, useState } from 'react';
-import {register} from '../../../../database/request.tsx'
+import { ChangeEvent, FormEvent, useContext, useState } from 'react';
+import { register } from '../../../../database/request.tsx'
+import { AuthContext } from '../../../services/authMemory.tsx';
 
 type FormState = {
     email: string;
@@ -21,9 +22,13 @@ export default function LoginAndRegister() {
         setForm(prev => ({ ...prev, [key]: value }))
     };
 
+    const { authDispatch: authDispatch } = useContext(AuthContext)
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        await register(form);
+        const token = await register(form);
+        if (! token) return;
+        console.log(token)
+        authDispatch({ type: 'setToken', token: token })
     };
 
 

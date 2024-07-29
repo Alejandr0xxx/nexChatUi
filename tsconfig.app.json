@@ -23,5 +23,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "database"]
+  "include": ["src", "database", "src/**/*.jsx", "src/**/*.js"]
 }

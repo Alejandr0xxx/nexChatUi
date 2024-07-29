@@ -13,7 +13,7 @@ export async function register(form: FormState) {
             body: JSON.stringify(form)
         })
         const logged = await response.json();
-        return console.log(`Has iniciado secion correctamente tu token es: ${JSON.stringify(logged)}`);
+        return (logged.token);
     }
     catch (err) {
         console.log('An err has occurred:\n', err);
