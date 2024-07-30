@@ -1,15 +1,20 @@
 import styles from '../stylesheets/login_page.module.css';
 import logo from '../../../assets/img/public_img/logo.png';
 import { ChangeEvent, FormEvent, useContext, useState } from 'react';
-import { register } from '../../../../database/request.tsx'
+import { login } from '../../../../database/request.tsx'
 import { AuthContext } from '../../../services/authMemory.tsx';
+import Register from './register.tsx';
+import { useNavigate } from 'react-router-dom';
 
 type FormState = {
     email: string;
     password: string;
 };
 
-export default function LoginAndRegister() {
+export default function Login() {
+    const navigate = useNavigate()
+
+
     const [form, setForm] = useState<FormState>({
         email: '',
         password: ''
@@ -23,14 +28,21 @@ export default function LoginAndRegister() {
     };
 
     const { authDispatch: authDispatch } = useContext(AuthContext)
+    
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        const token = await register(form);
-        if (! token) return;
-        console.log(token)
-        authDispatch({ type: 'setToken', token: token })
+        const token = await login(form);
+        if (!token) return;
+        if(token){
+            authDispatch({ type: 'setToken', token: token })
+            return navigate('/wasa')
+        }
     };
 
+    const [onRegister, setOnRegister] = useState(false);
+    const onClickRes = () => {
+        setOnRegister(!onRegister);
+    }
 
     return (
         <div className={styles.mainContainer}>
@@ -41,8 +53,8 @@ export default function LoginAndRegister() {
                         <img className={styles.img} src={logo} alt="logo" />
                         <span className={styles.span}>NexChat</span>
                     </div>
-                    <div>
-                        <form onSubmit={handleSubmit} className={styles.form}>
+                    <div className={styles.form}>
+                        <form onSubmit={handleSubmit} >
                             <input
                                 type="text"
                                 placeholder='Correo electrónico'
@@ -57,10 +69,11 @@ export default function LoginAndRegister() {
                                 onChange={e => onChange(e, 'password')} />
                             <button className={styles.button}>Login</button>
                             <a className={styles.a} href="">¿Olvidaste tu contraseña?</a>
-                            <a className={styles.a} href="">Registrarse</a>
                         </form>
+                        <button className={styles.a} onClick={onClickRes}>Registrarse</button>
                     </div>
                 </div>
+                {onRegister && <Register setOnRegister={setOnRegister}/>}
             </main>
             <footer className={styles.footer}>footer</footer>
         </div>)

@@ -1,5 +1,5 @@
 import './App.css'
-import LoginAndRegister from './components/public/components/login_and_register'
+import Login from './components/public/components/login'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AuthVerify from './services/authVerify'
 
@@ -11,7 +11,7 @@ function App() {
       children: [
         {
           path: '/',
-          element: <LoginAndRegister />
+          element: <Login />
         },
         {
           element: <AuthVerify />,

@@ -50,16 +50,6 @@
     padding: 0.5rem;
 }
 
-.button{
-    background-color: rgb(169, 204, 224);
-    border: 1px solid rgb(117, 159, 168);
-    color: rgb(99, 127, 142);
-    border-radius: 1rem;
-    width: 5rem;
-    align-self: center;
-    cursor: pointer;
-}
-
 .a{
     align-self: center;
     font-size: 0.78rem;
@@ -68,6 +58,16 @@
     margin-top: 0.6rem;
 }
 
+.button{
+    background-color: rgb(169, 204, 224);
+    border: 1px solid rgb(117, 159, 168);
+    color: rgb(99, 127, 142);
+    border-radius: 1rem;
+    width: 5rem;
+    align-self: center;
+    cursor: pointer;
+  }
+  
 
 .img{
     width: 100px;

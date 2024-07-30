@@ -1,0 +1,62 @@
+.modalContainer {
+    inset: 0;
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+}
+
+.subModalContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 25rem;
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.spanContainer {
+    border-bottom: 1px solid rgb(212, 207, 207);
+    color: rgb(117, 100, 100);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 15rem;
+}
+
+.span {
+    margin-left: 0.5rem;
+}
+
+.xButton {
+    max-width: 1rem;
+    margin-left: 9rem;
+    background-color: inherit;
+    border: none;
+}
+
+.xImg {
+    width: 0.8rem;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input {
+    border: none;
+    border-radius: 0.2rem;
+    border: 1px solid rgb(208, 208, 208);
+    background-color: rgb(220, 220, 220);
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 13rem;
+}
+
+.button {
+    width: 5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(154, 171, 181);
+    background: linear-gradient(rgb(121, 183, 218), rgb(168, 199, 217));
+    color: rgb(141, 145, 147);
+}
