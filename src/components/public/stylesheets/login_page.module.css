@@ -2,27 +2,34 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: rgb(156, 220, 240);
+    background: linear-gradient(rgb(199, 234, 242), rgb(120, 182, 195));
+
+
+}
+.header {
+    background: linear-gradient(0deg, rgb(140, 159, 198) 0%, rgb(136, 201, 239) 55%);
+    height:90px ;
+    position: absolute;
+    width: 100%;
 }
 
 .mainSectionContainer {
-    flex: 1; 
+    flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
-.formContainer{
+.formContainer {
     display: flex;
     flex-direction: row;
     background-color: rgb(239, 239, 239);
-    border-radius: 0rem 0rem 0rem 8rem;
+    border-radius: 1rem 1rem 1rem 8rem;
     padding: 2rem;
-    box-shadow: -0.9rem 1rem 0.1rem rgb(138, 138, 138),
-    1rem 1rem 0.1rem gray;
-}
+    box-shadow: -0.9rem 1rem 2rem rgb(109, 115, 134);
+}   
 
-.imgContainer{
+.imgContainer {
     display: flex;
     flex-direction: column;
     padding: 2rem;
@@ -30,11 +37,11 @@
     color: rgb(82, 74, 74);
 }
 
-.span{
+.span {
     width: fit-content;
 }
 
-.form{
+.formSubContainer {
     display: flex;
     flex-direction: column;
     background-color: rgb(217, 221, 224);
@@ -43,14 +50,20 @@
     border-radius: 1rem;
 }
 
-.input{
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
     border: none;
     border-radius: 0.2rem;
     margin-bottom: 1rem;
     padding: 0.5rem;
+    box-shadow:0 5px 2px rgb(175, 175, 175) ;
 }
 
-.a{
+.a {
     align-self: center;
     font-size: 0.78rem;
     text-decoration: none;
@@ -58,7 +71,15 @@
     margin-top: 0.6rem;
 }
 
-.button{
+.imgLogin {
+    height: 12px;
+    margin-left: 6px;
+    margin-bottom:-1px ;
+    opacity:0.4 ;
+
+}
+
+.button {
     background-color: rgb(169, 204, 224);
     border: 1px solid rgb(117, 159, 168);
     color: rgb(99, 127, 142);
@@ -66,13 +87,22 @@
     width: 5rem;
     align-self: center;
     cursor: pointer;
-  }
-  
+}
 
-.img{
+.resButton {
+    background: none;
+    border: none;
+    color: rgb(138, 138, 138);
+    cursor: pointer;
+    margin: 10px 0 0 0 ;
+}
+
+.img {
     width: 100px;
+    filter: drop-shadow(-10px 10px 2px rgb(185, 185, 185));
+
 }
 
 .footer {
-    margin-top: auto; 
+    margin-top: auto;
 }

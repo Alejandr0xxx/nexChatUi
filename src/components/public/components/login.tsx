@@ -5,6 +5,7 @@ import { login } from '../../../../database/request.tsx'
 import { AuthContext } from '../../../services/authMemory.tsx';
 import Register from './register.tsx';
 import { useNavigate } from 'react-router-dom';
+import imgLogin from '../../../assets/img/public_img/login.png'
 
 type FormState = {
     email: string;
@@ -46,15 +47,15 @@ export default function Login() {
 
     return (
         <div className={styles.mainContainer}>
-            <header>header</header>
+            <header className={styles.header} ></header>
             <main className={styles.mainSectionContainer}>
                 <div className={styles.formContainer}>
                     <div className={styles.imgContainer}>
                         <img className={styles.img} src={logo} alt="logo" />
                         <span className={styles.span}>NexChat</span>
                     </div>
-                    <div className={styles.form}>
-                        <form onSubmit={handleSubmit} >
+                    <div className={styles.formSubContainer}>
+                        <form className={styles.form} onSubmit={handleSubmit} >
                             <input
                                 type="text"
                                 placeholder='Correo electrónico'
@@ -67,10 +68,11 @@ export default function Login() {
                                 className={styles.input}
                                 value={password}
                                 onChange={e => onChange(e, 'password')} />
-                            <button className={styles.button}>Login</button>
+                            <button className={styles.button}>Login <img className={styles.imgLogin} src={imgLogin} alt=" login" /></button>
+                            
                             <a className={styles.a} href="">¿Olvidaste tu contraseña?</a>
-                        </form>
-                        <button className={styles.a} onClick={onClickRes}>Registrarse</button>
+                        </form >
+                        <button className={styles.resButton} onClick={onClickRes}>Registrarse</button>
                     </div>
                 </div>
                 {onRegister && <Register setOnRegister={setOnRegister}/>}
