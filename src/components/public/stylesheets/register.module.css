@@ -1,8 +1,10 @@
 .modalContainer {
-    inset: 0;
-    position: absolute;
-    align-self: center;
-    justify-self: center;
+display: flex;
+justify-content: center;
+align-items: center;
+backdrop-filter: blur(3px);
+inset: 0;   
+position: absolute;
 }
 
 .subModalContainer {
@@ -27,10 +29,11 @@
 }
 
 .xButton {
-    max-width: 1rem;
+    max-width: 4rem;
     margin-left: 9rem;
     background-color: inherit;
     border: none;
+    cursor: pointer;
 }
 
 .xImg {
@@ -44,6 +47,7 @@
 }
 
 .input {
+
     border: none;
     border-radius: 0.2rem;
     border: 1px solid rgb(208, 208, 208);
@@ -51,6 +55,7 @@
     margin-bottom: 1rem;
     padding: 0.5rem;
     width: 13rem;
+    box-shadow: 0 5px 2px rgb(175, 175, 175)
 }
 
 .button {
@@ -59,4 +64,6 @@
     border: 1px solid rgb(154, 171, 181);
     background: linear-gradient(rgb(121, 183, 218), rgb(168, 199, 217));
     color: rgb(141, 145, 147);
+    cursor: pointer;
+    box-shadow: 0 5px 2px rgb(175, 175, 175);
 }

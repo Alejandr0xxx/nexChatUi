@@ -44,12 +44,12 @@ export default function Register({ setOnRegister }: RegisterProps) {
         <div className={styles.modalContainer}>
             <div className={styles.subModalContainer}>
                 <div className={styles.spanContainer}>
-                    <span className={styles.span}>Register</span>
+                    <span className={styles.span}>Registro</span>
                     <button onClick={() => setOnRegister(false)} className={styles.xButton} id="x-button" ><img className={styles.xImg} src={xButton} alt="xButton" /></button>                </div>
                 <form onSubmit={onSubmit} className={styles.formContainer}>
                     <input type="text"
                         className={styles.input}
-                        placeholder="Username"
+                        placeholder="usuario"
                         value={username}
                         onChange={e => onChange(e, 'username')} />
                     <input type="text"
@@ -59,15 +59,15 @@ export default function Register({ setOnRegister }: RegisterProps) {
                         onChange={e => onChange(e, 'email')} />
                     <input type="password"
                         className={styles.input}
-                        placeholder="Password"
+                        placeholder="contraseña"
                         value={password}
                         onChange={e => onChange(e, 'password')} />
                     <input type="password"
                         className={styles.input}
-                        placeholder="Confirm password"
+                        placeholder="confirmar contraseña"
                         value={confPassword}
                         onChange={e => onChange(e, 'confPassword')} />
-                    <button className={styles.button}>Sign up</button>
+                    <button className={styles.button}>registrarse</button>
                 </form>
             </div>
         </div>
