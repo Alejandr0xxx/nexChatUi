@@ -29,27 +29,28 @@ export default function Register({ setOnRegister }: RegisterProps) {
         setForm(prev => ({ ...prev, [key]: value }))
     };
 
-    const {authDispatch: authDispatch }= useContext(AuthContext)
+    const { authDispatch: authDispatch } = useContext(AuthContext)
 
     const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        const resForm = {username, email, password};
+        const resForm = { username, email, password };
         console.log(resForm)
-        if(password !== confPassword) return alert('Passwords do not match!');
+        if (password !== confPassword) return alert('Passwords do not match!');
         const token = await register(resForm)
         console.log(token)
-        authDispatch({type: 'setToken', token: token })
+        authDispatch({ type: 'setToken', token: token })
     }
     return (
         <div className={styles.modalContainer}>
             <div className={styles.subModalContainer}>
                 <div className={styles.spanContainer}>
                     <span className={styles.span}>Registro</span>
-                    <button onClick={() => setOnRegister(false)} className={styles.xButton} id="x-button" ><img className={styles.xImg} src={xButton} alt="xButton" /></button>                </div>
+                    <button onClick={() => setOnRegister(false)} className={styles.xButton} id="x-button" ><img className={styles.xImg} src={xButton} alt="xButton" /></button>
+                </div>
                 <form onSubmit={onSubmit} className={styles.formContainer}>
                     <input type="text"
                         className={styles.input}
-                        placeholder="usuario"
+                        placeholder="Usuario"
                         value={username}
                         onChange={e => onChange(e, 'username')} />
                     <input type="text"
@@ -59,15 +60,15 @@ export default function Register({ setOnRegister }: RegisterProps) {
                         onChange={e => onChange(e, 'email')} />
                     <input type="password"
                         className={styles.input}
-                        placeholder="contraseña"
+                        placeholder="Contraseña"
                         value={password}
                         onChange={e => onChange(e, 'password')} />
                     <input type="password"
                         className={styles.input}
-                        placeholder="confirmar contraseña"
+                        placeholder="Confirmar contraseña"
                         value={confPassword}
                         onChange={e => onChange(e, 'confPassword')} />
-                    <button className={styles.button}>registrarse</button>
+                    <button className={styles.button}>Registrarse</button>
                 </form>
             </div>
         </div>
